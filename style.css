@@ -309,8 +309,8 @@ h1, h2, h3, h4 {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 4rem;
-    left: 5vw;
+    bottom: 3rem;
+    right: 4vw;
     z-index: 5;
     display: flex;
     flex-direction: column;
@@ -320,7 +320,7 @@ h1, h2, h3, h4 {
     font-size: 0.65rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: rgba(240,235,227,0.5);
     opacity: 0;
     animation: fadeSlideUp 1s 1.3s var(--ease-out) forwards;
 }
