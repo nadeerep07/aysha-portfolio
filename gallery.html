@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Archive — Aysha Model Portfolio</title>
+    <meta name="description" content="Complete photography archive of Aysha — editorial model. Browse all shoots, portraits, and fashion campaigns.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">ESC / CLOSE</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged portfolio image">
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&#8594;</button>
+    </div>
+
+    <!-- ── Gallery Nav Bar ──────────────────────────────────── -->
+    <nav class="gallery-nav-bar" aria-label="Gallery navigation">
+        <a href="index.html" class="gallery-return" id="returnLink">
+            <span class="gallery-return-arrow"></span>
+            Back to Portfolio
+        </a>
+        <span style="font-family: var(--font-ui); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim);">AYSHA.</span>
+    </nav>
+
+    <!-- ── Gallery Header ───────────────────────────────────── -->
+    <section class="gallery-page-header">
+        <h1 class="animate-up">Full <em>Archive</em></h1>
+        <p class="gallery-subtitle animate-up" style="animation-delay: 0.15s;">Chronological Photography</p>
+        <p class="gallery-count animate-up" id="galleryCount" style="animation-delay: 0.25s;">21 images</p>
+    </section>
+
+    <!-- ── Filter Bar ───────────────────────────────────────── -->
+    <div class="filter-bar" role="group" aria-label="Filter photos by category">
+        <button class="filter-btn active" data-filter="all" id="filterAll">All</button>
+        <button class="filter-btn" data-filter="editorial" id="filterEditorial">Editorial</button>
+        <button class="filter-btn" data-filter="outdoor" id="filterOutdoor">Outdoor</button>
+        <button class="filter-btn" data-filter="studio" id="filterStudio">Studio</button>
+        <button class="filter-btn" data-filter="bw" id="filterBW">Black &amp; White</button>
+    </div>
+
+    <!-- ── Masonry Gallery ───────────────────────────────────── -->
+    <section class="masonry-gallery" id="masonryGallery" aria-label="Photo gallery">
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery1.jpeg">
+            <img src="images/gallery1.jpeg" alt="Editorial portrait 1" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery2.jpeg">
+            <img src="images/gallery2.jpeg" alt="Outdoor portrait 2" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery3.jpeg">
+            <img src="images/gallery3.jpeg" alt="Outdoor portrait 3" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="studio" data-src="images/gallery4.jpeg">
+            <img src="images/gallery4.jpeg" alt="Studio portrait 4" loading="lazy">
+            <div class="masonry-hover-label"><span>Studio</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery5.jpeg">
+            <img src="images/gallery5.jpeg" alt="Outdoor portrait 5" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery6.jpeg">
+            <img src="images/gallery6.jpeg" alt="Editorial portrait 6" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery7.jpeg">
+            <img src="images/gallery7.jpeg" alt="Outdoor portrait 7" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery8.jpeg">
+            <img src="images/gallery8.jpeg" alt="Editorial portrait 8" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery9.jpeg">
+            <img src="images/gallery9.jpeg" alt="Outdoor portrait 9" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery10.jpeg">
+            <img src="images/gallery10.jpeg" alt="Outdoor portrait 10" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery11.jpeg">
+            <img src="images/gallery11.jpeg" alt="Editorial portrait 11" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery12.jpeg">
+            <img src="images/gallery12.jpeg" alt="Outdoor portrait 12" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery13.jpeg">
+            <img src="images/gallery13.jpeg" alt="Outdoor portrait 13" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery14.jpeg">
+            <img src="images/gallery14.jpeg" alt="Editorial portrait 14" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery15.jpeg">
+            <img src="images/gallery15.jpeg" alt="Outdoor portrait 15" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery16.jpeg">
+            <img src="images/gallery16.jpeg" alt="Outdoor portrait 16" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery18.jpeg">
+            <img src="images/gallery18.jpeg" alt="Outdoor portrait 18" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="studio" data-src="images/gallery19.jpeg">
+            <img src="images/gallery19.jpeg" alt="Studio portrait 19" loading="lazy">
+            <div class="masonry-hover-label"><span>Studio</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery20.jpeg">
+            <img src="images/gallery20.jpeg" alt="Outdoor portrait 20" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="bw" data-src="images/gallery21.jpeg">
+            <img src="images/gallery21.jpeg" alt="Black and white portrait 21" loading="lazy">
+            <div class="masonry-hover-label"><span>B&amp;W</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery22.jpeg">
+            <img src="images/gallery22.jpeg" alt="Editorial portrait 22" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+    </section>
+
+    <footer class="footer-2026">
+        <span>&copy; 2026 Aysha. All rights reserved.</span>
+        <a href="index.html" style="font-family: var(--font-ui); font-size: 0.7rem; letter-spacing: 1px; color: var(--text-dim); transition: color 0.3s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-dim)'">← Back to Portfolio</a>
+    </footer>
+
+    <script>
+        // ── Custom Cursor ─────────────────────────────────────
+        const cursorDot = document.getElementById('cursorDot');
+        const cursorOutline = document.getElementById('cursorOutline');
+
+        window.addEventListener('mousemove', (e) => {
+            const { clientX: x, clientY: y } = e;
+            cursorDot.style.left = `${x}px`;
+            cursorDot.style.top  = `${y}px`;
+            if (cursorOutline.animate) {
+                cursorOutline.animate(
+                    { left: `${x}px`, top: `${y}px` },
+                    { duration: 500, fill: 'forwards' }
+                );
+            } else {
+                cursorOutline.style.left = `${x}px`;
+                cursorOutline.style.top  = `${y}px`;
+            }
+        });
+
+        // ── Intersection Observer ─────────────────────────────
+        const revealEls = document.querySelectorAll('.reveal, .animate-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => observer.observe(el));
+
+        // ── Gallery Filter ────────────────────────────────────
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const allItems   = document.querySelectorAll('.masonry-item');
+        const countEl    = document.getElementById('galleryCount');
+
+        function applyFilter(filter) {
+            let count = 0;
+            allItems.forEach(item => {
+                const match = filter === 'all' || item.dataset.category === filter;
+                if (match) {
+                    item.classList.remove('filtered-out');
+                    count++;
+                } else {
+                    item.classList.add('filtered-out');
+                }
+            });
+            countEl.textContent = `${count} image${count !== 1 ? 's' : ''}`;
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                applyFilter(btn.dataset.filter);
+            });
+        });
+
+        // ── Lightbox ──────────────────────────────────────────
+        const lightbox      = document.getElementById('lightbox');
+        const lightboxImg   = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev  = document.getElementById('lightboxPrev');
+        const lightboxNext  = document.getElementById('lightboxNext');
+
+        let visibleItems = [];
+        let currentIndex = 0;
+
+        function getVisibleItems() {
+            return Array.from(allItems).filter(i => !i.classList.contains('filtered-out'));
+        }
+
+        function openLightbox(index) {
+            visibleItems = getVisibleItems();
+            currentIndex = index;
+            lightboxImg.src = visibleItems[currentIndex].dataset.src;
+            lightboxImg.alt = visibleItems[currentIndex].querySelector('img').alt;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+            lightboxImg.src = visibleItems[currentIndex].dataset.src;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % visibleItems.length;
+            lightboxImg.src = visibleItems[currentIndex].dataset.src;
+        }
+
+        allItems.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                const visible = getVisibleItems();
+                const vIdx = visible.indexOf(item);
+                if (vIdx !== -1) openLightbox(vIdx);
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevImage);
+        lightboxNext.addEventListener('click', nextImage);
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape')      closeLightbox();
+            if (e.key === 'ArrowLeft')  prevImage();
+            if (e.key === 'ArrowRight') nextImage();
+        });
+    </script>
+</body>
+
+</html>
