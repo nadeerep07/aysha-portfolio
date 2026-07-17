@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Archive — Aysha Model Portfolio</title>
+    <title>Full Gallery — Aysha Model Portfolio</title>
     <meta name="description" content="Complete photography archive of Aysha — editorial model. Browse all shoots, portraits, and fashion campaigns.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,19 +37,10 @@
 
     <!-- ── Gallery Header ───────────────────────────────────── -->
     <section class="gallery-page-header">
-        <h1 class="animate-up">Full <em>Archive</em></h1>
+        <h1 class="animate-up">Full <em>Gallery</em></h1>
         <p class="gallery-subtitle animate-up" style="animation-delay: 0.15s;">Chronological Photography</p>
-        <p class="gallery-count animate-up" id="galleryCount" style="animation-delay: 0.25s;">21 images</p>
+        <p class="gallery-count animate-up" id="galleryCount" style="animation-delay: 0.25s;">29 images</p>
     </section>
-
-    <!-- ── Filter Bar ───────────────────────────────────────── -->
-    <div class="filter-bar" role="group" aria-label="Filter photos by category">
-        <button class="filter-btn active" data-filter="all" id="filterAll">All</button>
-        <button class="filter-btn" data-filter="editorial" id="filterEditorial">Editorial</button>
-        <button class="filter-btn" data-filter="outdoor" id="filterOutdoor">Outdoor</button>
-        <button class="filter-btn" data-filter="studio" id="filterStudio">Studio</button>
-        <button class="filter-btn" data-filter="bw" id="filterBW">Black &amp; White</button>
-    </div>
 
     <!-- ── Masonry Gallery ───────────────────────────────────── -->
     <section class="masonry-gallery" id="masonryGallery" aria-label="Photo gallery">
@@ -117,6 +108,7 @@
             <img src="images/gallery16.jpeg" alt="Outdoor portrait 16" loading="lazy">
             <div class="masonry-hover-label"><span>Outdoor</span></div>
         </div>
+
         <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery18.jpeg">
             <img src="images/gallery18.jpeg" alt="Outdoor portrait 18" loading="lazy">
             <div class="masonry-hover-label"><span>Outdoor</span></div>
@@ -136,6 +128,38 @@
         <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery22.jpeg">
             <img src="images/gallery22.jpeg" alt="Editorial portrait 22" loading="lazy">
             <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery23.jpeg">
+            <img src="images/gallery23.jpeg" alt="Outdoor portrait 23" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery24.jpeg">
+            <img src="images/gallery24.jpeg" alt="Editorial portrait 24" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery25.jpeg">
+            <img src="images/gallery25.jpeg" alt="Editorial portrait 25" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery26.jpeg">
+            <img src="images/gallery26.jpeg" alt="Outdoor portrait 26" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery27.jpeg">
+            <img src="images/gallery27.jpeg" alt="Outdoor portrait 27" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="editorial" data-src="images/gallery28.jpeg">
+            <img src="images/gallery28.jpeg" alt="Editorial portrait 28" loading="lazy">
+            <div class="masonry-hover-label"><span>Editorial</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="studio" data-src="images/gallery29.jpeg">
+            <img src="images/gallery29.jpeg" alt="Studio portrait 29" loading="lazy">
+            <div class="masonry-hover-label"><span>Studio</span></div>
+        </div>
+        <div class="masonry-item reveal" data-category="outdoor" data-src="images/gallery30.jpeg">
+            <img src="images/gallery30.jpeg" alt="Outdoor portrait 30" loading="lazy">
+            <div class="masonry-hover-label"><span>Outdoor</span></div>
         </div>
     </section>
 
@@ -176,32 +200,8 @@
         }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
         revealEls.forEach(el => observer.observe(el));
 
-        // ── Gallery Filter ────────────────────────────────────
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const allItems   = document.querySelectorAll('.masonry-item');
-        const countEl    = document.getElementById('galleryCount');
-
-        function applyFilter(filter) {
-            let count = 0;
-            allItems.forEach(item => {
-                const match = filter === 'all' || item.dataset.category === filter;
-                if (match) {
-                    item.classList.remove('filtered-out');
-                    count++;
-                } else {
-                    item.classList.add('filtered-out');
-                }
-            });
-            countEl.textContent = `${count} image${count !== 1 ? 's' : ''}`;
-        }
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                applyFilter(btn.dataset.filter);
-            });
-        });
+        // ── Gallery Items ─────────────────────────────────────
+        const allItems = document.querySelectorAll('.masonry-item');
 
         // ── Lightbox ──────────────────────────────────────────
         const lightbox      = document.getElementById('lightbox');
