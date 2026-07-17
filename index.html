@@ -8,7 +8,8 @@
     <meta name="description"
         content="Official portfolio of Aysha — editorial model based in Kerala, India. Cinematic fashion photography for lookbooks, campaigns, and creative collaborations.">
     <meta name="keywords" content="Aysha, model portfolio, editorial model, fashion photography, Kerala model">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif' fill='%23C8A97E'%3EA%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif' fill='%23C8A97E'%3EA%3C/text%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +20,6 @@
 </head>
 
 <body>
-
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-outline" id="cursorOutline"></div>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
@@ -239,31 +236,37 @@
             <div class="reveal contact-left">
                 <p class="contact-eyebrow">Open to Opportunities</p>
                 <h2 class="giant-heading">Let's <i>Connect.</i></h2>
-                <p class="contact-tagline">Whether it's a campaign, lookbook, or creative collaboration — let's make something great together.</p>
+                <p class="contact-tagline">Whether it's a campaign, lookbook, or creative collaboration — let's make
+                    something great together.</p>
             </div>
-            
+
             <div class="contact-right reveal">
-                <div class="contact-row" tabindex="0" role="link" onclick="window.location.href='mailto:ayshaahyder@gmail.com'">
+                <div class="contact-row" tabindex="0" role="link"
+                    onclick="window.open('https://www.instagram.com/ay.ysshhaa?igsh=cXRuY2tuN21nN2Zi', '_blank')">
                     <span class="contact-num">01</span>
-                    <span class="contact-label">Email</span>
-                    <a href="mailto:ayshaahyder@gmail.com" class="contact-link" id="emailLink">
-                        ayshaahyder@gmail.com <i class="contact-arrow">↗</i>
-                    </a>
-                </div>
-                
-                <div class="contact-row" tabindex="0" role="link" onclick="window.open('https://www.instagram.com/ay.ysshhaa?igsh=cXRuY2tuN21nN2Zi', '_blank')">
-                    <span class="contact-num">02</span>
                     <span class="contact-label">Instagram</span>
-                    <a href="https://www.instagram.com/ay.ysshhaa?igsh=cXRuY2tuN21nN2Zi" class="contact-link" id="instagramLink" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/ay.ysshhaa?igsh=cXRuY2tuN21nN2Zi" class="contact-link"
+                        id="instagramLink" target="_blank" rel="noopener noreferrer">
                         @ay.ysshhaa <i class="contact-arrow">↗</i>
                     </a>
                 </div>
-                
-                <div class="contact-row" tabindex="0" role="link" onclick="window.open('https://www.linkedin.com/in/aysha-hyder-53ba15283', '_blank')">
-                    <span class="contact-num">03</span>
+
+                <div class="contact-row" tabindex="0" role="link"
+                    onclick="window.open('https://www.linkedin.com/in/aysha-hyder-53ba15283', '_blank')">
+                    <span class="contact-num">02</span>
                     <span class="contact-label">LinkedIn</span>
-                    <a href="https://www.linkedin.com/in/aysha-hyder-53ba15283" class="contact-link" id="linkedinLink" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/aysha-hyder-53ba15283" class="contact-link" id="linkedinLink"
+                        target="_blank" rel="noopener noreferrer">
                         Aysha Hyder <i class="contact-arrow">↗</i>
+                    </a>
+                </div>
+
+                <div class="contact-row" tabindex="0" role="link"
+                    onclick="window.location.href='mailto:ayshaahyder@gmail.com'">
+                    <span class="contact-num">03</span>
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:ayshaahyder@gmail.com" class="contact-link" id="emailLink">
+                        ayshaahyder@gmail.com <i class="contact-arrow">↗</i>
                     </a>
                 </div>
             </div>
@@ -276,36 +279,6 @@
     </footer>
 
     <script>
-        // ── Custom Cursor ─────────────────────────────────────
-        const cursorDot = document.getElementById('cursorDot');
-        const cursorOutline = document.getElementById('cursorOutline');
-        let mouseX = 0, mouseY = 0;
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursorDot.style.left = `${mouseX}px`;
-            cursorDot.style.top = `${mouseY}px`;
-            if (cursorOutline.animate) {
-                cursorOutline.animate(
-                    { left: `${mouseX}px`, top: `${mouseY}px` },
-                    { duration: 500, fill: 'forwards' }
-                );
-            } else {
-                cursorOutline.style.left = `${mouseX}px`;
-                cursorOutline.style.top = `${mouseY}px`;
-            }
-        });
-
-        // Toggle hover class for robust browser compatibility
-        const updateHoverState = () => {
-            const hoverables = document.querySelectorAll('a, button, [role="button"], .contact-row, .bento-item');
-            hoverables.forEach(el => {
-                el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovering'));
-                el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovering'));
-            });
-        };
-        updateHoverState();
 
         // ── Nav Scroll Behaviour ──────────────────────────────
         const nav = document.getElementById('mainNav');

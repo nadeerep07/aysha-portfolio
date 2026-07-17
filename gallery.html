@@ -15,10 +15,6 @@
 
 <body>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-outline" id="cursorOutline"></div>
-
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
         <button class="lightbox-close" id="lightboxClose" aria-label="Close">ESC / CLOSE</button>
@@ -170,34 +166,6 @@
     </footer>
 
     <script>
-        // ── Custom Cursor ─────────────────────────────────────
-        const cursorDot = document.getElementById('cursorDot');
-        const cursorOutline = document.getElementById('cursorOutline');
-
-        window.addEventListener('mousemove', (e) => {
-            const { clientX: x, clientY: y } = e;
-            cursorDot.style.left = `${x}px`;
-            cursorDot.style.top  = `${y}px`;
-            if (cursorOutline.animate) {
-                cursorOutline.animate(
-                    { left: `${x}px`, top: `${y}px` },
-                    { duration: 500, fill: 'forwards' }
-                );
-            } else {
-                cursorOutline.style.left = `${x}px`;
-                cursorOutline.style.top  = `${y}px`;
-            }
-        });
-
-        // Toggle hover class for robust browser compatibility
-        const updateHoverState = () => {
-            const hoverables = document.querySelectorAll('a, button, [role="button"], .contact-row, .bento-item, .masonry-item');
-            hoverables.forEach(el => {
-                el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovering'));
-                el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovering'));
-            });
-        };
-        updateHoverState();
 
         // ── Intersection Observer ─────────────────────────────
         const revealEls = document.querySelectorAll('.reveal, .animate-up');
