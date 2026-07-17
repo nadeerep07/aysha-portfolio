@@ -89,9 +89,12 @@ a {
 }
 
 body:has(a:hover) .cursor-outline,
-body:has(button:hover) .cursor-outline {
+body:has(button:hover) .cursor-outline,
+body:has([role="button"]:hover) .cursor-outline,
+body:has(.contact-row:hover) .cursor-outline,
+.cursor-outline.hovering {
     width: 52px; height: 52px;
-    background: rgba(196, 154, 138, 0.08);
+    background: rgba(200, 169, 126, 0.08);
     border-color: var(--accent);
 }
 
@@ -920,6 +923,7 @@ h1, h2, h3, h4 {
     border: none;
     transition: color 0.3s;
     padding: 0.5rem;
+    z-index: 10;
 }
 
 .lightbox-close:hover {
@@ -941,6 +945,7 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .lightbox-nav:hover {
@@ -1008,7 +1013,7 @@ h1, h2, h3, h4 {
 .filter-btn.active {
     border-color: var(--accent);
     color: var(--accent);
-    background: rgba(196, 154, 138, 0.06);
+    background: rgba(200, 169, 126, 0.06);
 }
 
 /* Masonry Gallery */

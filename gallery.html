@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Gallery — Aysha Model Portfolio</title>
     <meta name="description" content="Complete photography archive of Aysha — editorial model. Browse all shoots, portraits, and fashion campaigns.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='serif' fill='%23C8A97E'%3EA%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -187,6 +188,16 @@
                 cursorOutline.style.top  = `${y}px`;
             }
         });
+
+        // Toggle hover class for robust browser compatibility
+        const updateHoverState = () => {
+            const hoverables = document.querySelectorAll('a, button, [role="button"], .contact-row, .bento-item, .masonry-item');
+            hoverables.forEach(el => {
+                el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovering'));
+            });
+        };
+        updateHoverState();
 
         // ── Intersection Observer ─────────────────────────────
         const revealEls = document.querySelectorAll('.reveal, .animate-up');
